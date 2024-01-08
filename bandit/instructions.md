@@ -5,8 +5,9 @@ https://overthewire.org/wargames/bandit/
 
 ## Level 0 &rarr; Level 1
 
+Password : bandit0
+
 - ssh bandit0@bandit.labs.overthewire.org -p 2220
-- bandit0
 
 Highlights: use of ssh
 
@@ -19,7 +20,6 @@ Password : NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL
 
 - exit
 - ssh bandit1@bandit.labs.overthewire.org -p 2220
-- NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL
 
 Highlights: use of ls and cat
 
@@ -32,7 +32,6 @@ Password : rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
 
 - exit
 - ssh bandit2@bandit.labs.overthewire.org -p 2220
-- rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
 
 Highlights: special uses of cat
 
@@ -45,7 +44,6 @@ Password : aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
 
 - exit
 - ssh bandit3@bandit.labs.overthewire.org -p 2220
-- aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
 
 Highlights: special uses of cat continued
 
@@ -60,7 +58,6 @@ Password : 2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
 
 - exit
 - ssh bandit4@bandit.labs.overthewire.org -p 2220
-- 2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
 
 Highlights: hidden files
 
@@ -76,7 +73,6 @@ Password : lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
 
 - exit
 - ssh bandit5@bandit.labs.overthewire.org -p 2220
-- lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
 
 Highlights: multiple files and use of recursion
 
@@ -84,14 +80,13 @@ Highlights: multiple files and use of recursion
 
 - ls
 - man find
-- find -size1033c
+- find -size 1033c
 - cat inhere/maybehere07/.file2
 
 Password : P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
 
 - exit
 - ssh bandit6@bandit.labs.overthewire.org -p 2220
-- P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
 
 Highlights: use of man and find
 
@@ -105,7 +100,6 @@ Password : z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S
 
 - exit
 - ssh bandit7@bandit.labs.overthewire.org -p 2220
-- z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S
 
 Highlights: extended use of find
 
@@ -148,3 +142,105 @@ Password : G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
 - ssh bandit10@bandit.labs.overthewire.org -p 2220
 
 Highlights: use of strings and grep
+
+## Level 10 &rarr; Level 11
+
+- ls
+- man base64
+- base64 -d data.txt
+
+Password : 6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
+
+- exit
+- ssh bandit11@bandit.labs.overthewire.org -p 2220
+
+Highlights: use of base64
+
+## Level 11 &rarr; Level 12
+
+- ls
+- man tr
+- cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+
+Password : JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
+
+- exit
+- ssh bandit12@bandit.labs.overthewire.org -p 2220
+
+Highlights: use of tr
+
+## Level 12 &rarr; Level 13
+
+- ls
+- mkdir /tmp/youngr2
+- cp data.txt /tmp/youngr2
+- cd /tmp/youngr
+- ls
+- man xxd
+- xxd -r data.txt decompressed.txt
+- file decompressed.txt
+- man gzip
+- gunzip decompressed.txt
+- mv decompressed.txt decompressed.txt.gz
+- gunzip decompressed.txt
+- ls
+- file decompressed.txt
+- man bzip2
+- bunzip2 decompressed.txt
+- file decompressed.txt.out
+- mv decompressed.txt.out decompressed.txt.gz
+- gunzip decompressed.txt.gz
+- ls
+- file decompressed.txt
+- man tar
+- mv decompressed.txt decompressed.txt.tar
+- tar -xf decompressed.txt
+- ls
+- file data5.bin
+- mv data5.bin data5.bin.tar
+- ls
+- file data6.bin
+- mv data6.bin data6.bin.txt
+- bunzip2 data6.bin.txt
+- ls
+- file data6.bin.txt.out
+- tar -xf data6.bin.txt.out
+- file data8.bin
+- mv data8.bin data8.bin.gz
+- gunzip data8.bin.gz
+- file data8.bin
+- cat data8.bin
+
+Password : wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
+
+- exit
+- ssh bandit13@bandit.labs.overthewire.org -p 2220
+
+Highlights: Compression techniques
+
+## Level 13 &rarr; Level 14
+
+- ls
+- man ssh
+- ssh -i sshkey.private bandit14@localhost -p 2220
+- cat /etc/bandit_pass/bandit14
+
+Password : fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
+
+Highlights: Use of ssh keys
+
+## Level 14 &rarr; Level 15
+
+- man nc
+- nc localhost 30000
+- fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
+
+Password : jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
+
+- exit
+- exit
+- ssh bandit15@bandit.labs.overthewire.org -p 2220
+
+Highlights: Use of netcat
+
+## Level 15 &rarr; Level 16
