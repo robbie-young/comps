@@ -1,6 +1,6 @@
 # Bandit Notes
 
-This is a set of unix instructions to complete the OverTheWire Bandit challenge series. <br>
+This is a unix instruction set to complete the OverTheWire Bandit challenge series. <br>
 https://overthewire.org/wargames/bandit/
 
 ## Level 0 &rarr; Level 1
@@ -238,9 +238,60 @@ Highlights: Use of ssh keys
 Password : jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
 
 - exit
-- exit
 - ssh bandit15@bandit.labs.overthewire.org -p 2220
 
 Highlights: Use of netcat
 
 ## Level 15 &rarr; Level 16
+
+- man openssl
+- openssl s_client -help
+- cat /etc/bandit_pass/bandit15
+- openssl s_client localhost:30001
+- jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
+
+Password : JQttfApK4SeyHwDlI9SXGR50qclOAil1
+
+- exit
+- ssh bandit16@bandit.labs.overthewire.org -p 2220
+
+Highlights: use of openssl to connect to localhost
+
+## Level 16 &rarr; Level 17
+
+- man nmap
+- nmap -p 31000-32000 -sV localhost
+- cat /etc/bandit_pass/bandit16
+- openssl s_client localhost:31790
+- JQttfApK4SeyHwDlI9SXGR50qclOAil1
+
+copy key
+
+- mkdir /tmp/bandit16
+- cd /tmp/bandit16
+- cat > sshkey16.private
+
+paste key
+
+- chmod 600 sshkey16.private
+- ssh -i sshkey16.private bandit17@localhost -p 2220
+
+Highlights: Use of port scanning and some file permissions
+
+## Level 17 &rarr; Level 18
+
+- man diff
+- ls
+- diff passwords.new passwords.old
+
+Password : hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg
+
+- exit
+- exit
+- ssh bandit18@bandit.labs.overthewire.org -p 2220
+
+Highlights: Use of diff
+
+## Level 18 &rarr; Level 19
+
+
